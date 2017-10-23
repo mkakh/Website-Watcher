@@ -3,7 +3,7 @@
 set -eu
 
 ## EDIT HERE ####################
-INTERVAL=3s
+INTERVAL=30s
 MP3="${HOME}/Music/hogefuga.mp3"
 DIFF_OPTIONS=""
 #################################
