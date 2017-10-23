@@ -24,6 +24,6 @@ DIFF="$(get_html)"
 echo "-- START WATCHING --"
 while true; do
     diff ${DIFF_OPTIONS} <(echo "$(get_html)") <(echo "$DIFF") \
-        || DIFF="$(get_html) && mpg123 "$MP3"
+        || DIFF="$(get_html)" && mpg123 "$MP3"
     sleep ${INTERVAL}
 done
