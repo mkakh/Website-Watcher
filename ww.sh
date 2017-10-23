@@ -5,7 +5,7 @@ set -eu
 ## EDIT HERE ####################
 INTERVAL=30s
 MP3="${HOME}/Music/hogefuga.mp3"
-DIFF_OPTIONS=""
+DIFF_OPTIONS="-s"
 #################################
 
 if [ $# -ne 1 ]; then
@@ -24,6 +24,6 @@ DIFF="$(get_html)"
 echo "-- START WATCHING --"
 while true; do
     diff ${DIFF_OPTIONS} <(echo "$(get_html)") <(echo "$DIFF") \
-            || mpg123 "$MP3"
+        || DIFF="$(get_html) && mpg123 "$MP3"
     sleep ${INTERVAL}
 done
